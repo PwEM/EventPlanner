@@ -1,0 +1,13 @@
+{% load static %}
+<a class="featuredItem bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer" href="{% url 'venue:city-detail' obj.slug %}">
+    <img src="{% if obj.image %}
+        {{ obj.image.url }}
+    {% else %}
+        {% static 'images/venue.jpg' %}
+    {% endif %} " alt="{{ obj.name }}"
+         class="featuredImg w-full h-48 object-cover"/>
+    <div class="featuredTitles p-4">
+        <h1 class="text-xl font-semibold">{{ obj.name }}</h1>
+        <h2 class="text-sm text-gray-500">{{ obj.get_venue_count }} Venues</h2>
+    </div>
+</a>

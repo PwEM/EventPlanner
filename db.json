@@ -1,0 +1,1796 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "emailaddress"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "emailconfirmation"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "users",
+    "model": "authuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "venue",
+    "model": "venueimages"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "venue",
+    "model": "city"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "venue",
+    "model": "price"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "venue",
+    "model": "venuemodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "venue",
+    "model": "bookingmodel"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "99xx7ttbcob9j7ku09lyb1pio7g3n4ix",
+  "fields": {
+    "session_data": ".eJxVkEFuxCAMRe_idYSAMEPIqtNrVFVkMFFQExgForYazd07pNlkY1n_289ffgA6l7ZYBtzK5GMJDktIcVh8mRJl6D8e8N9DD3fM-TutBA1ggV5opaQ20iimL6pVogG_YJhfk0hLiG97ZS4t8PxsYD8xbNmvQ6g0ASfNovvysRo4z1VmRzS2zxx2ZrdT0Pdj64SaME8vzsUhoUAv0GopxEhkqZOCj6SlsaRM13LHOyFbUldutWu7q1ejIa2EHaWv0Oxzrv_wP_ew_kLPn39nZ2c4:1u2oj0:DKP2p5CII5_8tS3WHQJL3kfM15jyDOWwYnWs5uTVu4Q",
+    "expire_date": "2025-04-24T10:01:34.794Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ip2ss1lbn2g6yklcreq1jdy59094556h",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGYgGX7nsGMsOAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnERIE6_G2F8pLoDvmO9NRlbXZeZ5K7Ig3Y5NU7P6-H-HRTs5VufIzICJkCyGiAzEzsNKrPVnth4N6ioHOiBzajIxsGNyWTP1gBlncT7AwF5OE0:1u2tHK:9y1voa9AjY0geRtNGc_ahQt1fOP3Ul-ekN3rSWvHG84",
+    "expire_date": "2025-04-24T14:53:18.582Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qxbcpbubverl148qwei5d1qocb4cji7f",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGYgGX7nsGMsOAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnERIE6_G2F8pLoDvmO9NRlbXZeZ5K7Ig3Y5NU7P6-H-HRTs5VufIzICJkCyGiAzEzsNKrPVnth4N6ioHOiBzajIxsGNyWTP1gBlncT7AwF5OE0:1u303u:puVzkG89-m1c38fjVszKC_gpSHqZDXE9L9qYVl9dkPA",
+    "expire_date": "2025-04-24T22:07:54.050Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "uwk0n95dtfj9kydfd6fda6axeg3vjoxa",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGYgGX7nsGMsOAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnERIE6_G2F8pLoDvmO9NRlbXZeZ5K7Ig3Y5NU7P6-H-HRTs5VufIzICJkCyGiAzEzsNKrPVnth4N6ioHOiBzajIxsGNyWTP1gBlncT7AwF5OE0:1u2qrS:Of1nJBkEu2FT_9mm9iz_4lArcUFv1c0GBRg4Sp0G7tw",
+    "expire_date": "2025-04-24T12:18:26.678Z"
+  }
+},
+{
+  "model": "venue.city",
+  "pk": 1,
+  "fields": {
+    "name": "Kathmandu",
+    "slug": "kathmandu",
+    "image": "city/ktm.jpg",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  }
+},
+{
+  "model": "venue.city",
+  "pk": 2,
+  "fields": {
+    "name": "Pokhara",
+    "slug": "pokhara",
+    "image": "city/pokhara.jpg",
+    "description": null
+  }
+},
+{
+  "model": "venue.city",
+  "pk": 3,
+  "fields": {
+    "name": "Lumbini",
+    "slug": "lumbini",
+    "image": "city/lumbini.jpg",
+    "description": ""
+  }
+},
+{
+  "model": "venue.price",
+  "pk": 1,
+  "fields": {
+    "venue": 1,
+    "price": "1100.00",
+    "type": "Vegetarian"
+  }
+},
+{
+  "model": "venue.price",
+  "pk": 2,
+  "fields": {
+    "venue": 1,
+    "price": "1500.00",
+    "type": "Non-Vegetarian"
+  }
+},
+{
+  "model": "venue.venueimages",
+  "pk": 1,
+  "fields": {
+    "venue": 1,
+    "image": "venue_images/lumbini.jpg"
+  }
+},
+{
+  "model": "venue.venueimages",
+  "pk": 2,
+  "fields": {
+    "venue": 1,
+    "image": "venue_images/pokhara.jpg"
+  }
+},
+{
+  "model": "venue.venueimages",
+  "pk": 3,
+  "fields": {
+    "venue": 1,
+    "image": "venue_images/ktm.jpg"
+  }
+},
+{
+  "model": "venue.venueimages",
+  "pk": 4,
+  "fields": {
+    "venue": 1,
+    "image": "venue_images/question_default.png"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add email address",
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "codename": "add_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change email address",
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "codename": "change_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete email address",
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "codename": "delete_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view email address",
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "codename": "view_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add email confirmation",
+    "content_type": [
+      "account",
+      "emailconfirmation"
+    ],
+    "codename": "add_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change email confirmation",
+    "content_type": [
+      "account",
+      "emailconfirmation"
+    ],
+    "codename": "change_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete email confirmation",
+    "content_type": [
+      "account",
+      "emailconfirmation"
+    ],
+    "codename": "delete_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view email confirmation",
+    "content_type": [
+      "account",
+      "emailconfirmation"
+    ],
+    "codename": "view_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "codename": "add_authuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "codename": "change_authuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "codename": "delete_authuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "codename": "view_authuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add venue images",
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "codename": "add_venueimages"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change venue images",
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "codename": "change_venueimages"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete venue images",
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "codename": "delete_venueimages"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view venue images",
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "codename": "view_venueimages"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add city",
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "codename": "add_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change city",
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "codename": "change_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete city",
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "codename": "delete_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view city",
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "codename": "view_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add price",
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "codename": "add_price"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change price",
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "codename": "change_price"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete price",
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "codename": "delete_price"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view price",
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "codename": "view_price"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add venue model",
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "codename": "add_venuemodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change venue model",
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "codename": "change_venuemodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete venue model",
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "codename": "delete_venuemodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view venue model",
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "codename": "view_venuemodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add booking model",
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "codename": "add_bookingmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change booking model",
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "codename": "change_bookingmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete booking model",
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "codename": "delete_bookingmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view booking model",
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "codename": "view_bookingmodel"
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Vendors",
+    "permissions": [
+      [
+        "add_city",
+        "venue",
+        "city"
+      ],
+      [
+        "view_city",
+        "venue",
+        "city"
+      ],
+      [
+        "add_price",
+        "venue",
+        "price"
+      ],
+      [
+        "change_price",
+        "venue",
+        "price"
+      ],
+      [
+        "delete_price",
+        "venue",
+        "price"
+      ],
+      [
+        "view_price",
+        "venue",
+        "price"
+      ],
+      [
+        "add_venueimages",
+        "venue",
+        "venueimages"
+      ],
+      [
+        "change_venueimages",
+        "venue",
+        "venueimages"
+      ],
+      [
+        "delete_venueimages",
+        "venue",
+        "venueimages"
+      ],
+      [
+        "view_venueimages",
+        "venue",
+        "venueimages"
+      ],
+      [
+        "add_venuemodel",
+        "venue",
+        "venuemodel"
+      ],
+      [
+        "change_venuemodel",
+        "venue",
+        "venuemodel"
+      ],
+      [
+        "delete_venuemodel",
+        "venue",
+        "venuemodel"
+      ],
+      [
+        "view_venuemodel",
+        "venue",
+        "venuemodel"
+      ]
+    ]
+  }
+},
+{
+  "model": "users.authuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8OUXoF9Ti2dsT2wzsioLE5$ue/HOhnL+Z15HU98XWeu1rcSL0ZGHnuGN61YCdx36tA=",
+    "last_login": "2025-04-10T22:07:54.046Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-04-10T05:54:22.222Z",
+    "profile_image": "",
+    "phone": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.authuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qySNtduKtgC4nqvzzomh9b$Hn8GqSH+UqLH7f52W6V+mYQHWUZxyJJ+Kqm6mOXGV68=",
+    "last_login": "2025-04-10T10:04:58.479Z",
+    "is_superuser": false,
+    "username": "khesehang",
+    "first_name": "khesehang",
+    "last_name": "yonghang",
+    "email": "khesehang81@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-10T06:07:21Z",
+    "profile_image": "",
+    "phone": "9863784674",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.authuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$I5ttj9vOPTU0tYL1E1mrGZ$00LrSksytvqzdxnWvvjmuTBZJ8zdHS3wQGVdsz+UPSQ=",
+    "last_login": "2025-04-10T12:20:10Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "test",
+    "email": "test@test.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-04-10T12:20:09Z",
+    "profile_image": "users/krishi.png",
+    "phone": "1234567890",
+    "groups": [
+      [
+        "Vendors"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "venue.venuemodel",
+  "pk": 1,
+  "fields": {
+    "name": "Test Venue",
+    "slug": "test-venue",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "capacity": 500,
+    "thumbnail_image": "venue/image_3.png",
+    "owner": [
+      "khesehang"
+    ],
+    "city": 1,
+    "location_text": "Sundhara Rd, Kathmandu 44600",
+    "location_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.539355752709!2d85.30702668661945!3d27.700628764400335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a96a1ce13%3A0xfd44672c7fd5f82a!2sDharahara!5e0!3m2!1sen!2snp!4v1744301096592!5m2!1sen!2snp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+    "available_date": "2025-04-10",
+    "created_at": "2025-04-10T16:05:35.421Z",
+    "updated_at": "2025-04-10T16:05:35.421Z"
+  }
+},
+{
+  "model": "venue.venuemodel",
+  "pk": 2,
+  "fields": {
+    "name": "Test Venue 1",
+    "slug": "test-venue-1",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "capacity": 250,
+    "thumbnail_image": "venue/image_3_oZ2b6HO.png",
+    "owner": [
+      "khesehang"
+    ],
+    "city": 1,
+    "location_text": "Kathmandu 44600",
+    "location_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3532.241937398196!2d85.3346611!3d27.7098154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19745afe478b%3A0x3b7a4bed129a9ee6!2sKalopul-Ratopul%20Rd%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1744325922230!5m2!1sen!2snp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+    "available_date": null,
+    "created_at": "2025-04-10T22:58:52.739Z",
+    "updated_at": "2025-04-10T22:58:52.739Z"
+  }
+},
+{
+  "model": "venue.bookingmodel",
+  "pk": 6,
+  "fields": {
+    "venue": 1,
+    "user": [
+      "test"
+    ],
+    "total_people": 150,
+    "meal_type": "Vegetarian",
+    "booked_at": "2025-04-11T02:14:31.275Z",
+    "is_paid": false
+  }
+},
+{
+  "model": "venue.bookingmodel",
+  "pk": 7,
+  "fields": {
+    "venue": 1,
+    "user": [
+      "test"
+    ],
+    "total_people": 150,
+    "meal_type": "Vegetarian",
+    "booked_at": "2025-04-11T02:14:31.275Z",
+    "is_paid": false
+  }
+},
+{
+  "model": "venue.bookingmodel",
+  "pk": 8,
+  "fields": {
+    "venue": 1,
+    "user": [
+      "test"
+    ],
+    "total_people": 300,
+    "meal_type": "Vegetarian",
+    "booked_at": "2025-04-11T02:14:31.275Z",
+    "is_paid": false
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "khesehang"
+    ],
+    "email": "khesehang81@gmail.com",
+    "verified": false,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "test"
+    ],
+    "email": "test@test.com",
+    "verified": false,
+    "primary": true
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-04-10T06:11:15.069Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "2",
+    "object_repr": "khesehang",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-04-10T11:00:15.861Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendor Group",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-04-10T11:00:18.936Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendor Group",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-04-10T11:47:23.962Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "Vendor Group",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-04-10T11:47:23.962Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "Vendors",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-04-10T11:48:38.159Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "3",
+    "object_repr": "Vendors",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-04-10T11:49:13.471Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "6",
+    "object_repr": "test123",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-04-10T12:15:31.044Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "8",
+    "object_repr": "test12345",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-04-10T12:15:57.984Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "8",
+    "object_repr": "test12345",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.239Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "3",
+    "object_repr": "test",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "9",
+    "object_repr": "test_123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "6",
+    "object_repr": "test123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "7",
+    "object_repr": "test1234",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "8",
+    "object_repr": "test12345",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "4",
+    "object_repr": "testing",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-04-10T12:19:39.240Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "5",
+    "object_repr": "testing123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-04-10T14:50:39.538Z",
+    "user": [
+      "test"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "1",
+    "object_repr": "Kathmandu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-04-10T14:52:26.149Z",
+    "user": [
+      "test"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "2",
+    "object_repr": "Pokhara",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-04-10T14:52:40.869Z",
+    "user": [
+      "test"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "3",
+    "object_repr": "Lumbini",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-04-10T14:53:27.741Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "4",
+    "object_repr": "Vendors",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-04-10T14:54:35.734Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "users",
+      "authuser"
+    ],
+    "object_id": "10",
+    "object_repr": "test",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-04-10T15:30:43.018Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "1",
+    "object_repr": "Kathmandu",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-04-10T15:30:52.131Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "1",
+    "object_repr": "Kathmandu",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-04-10T15:31:27.914Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "1",
+    "object_repr": "Kathmandu",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-04-10T15:34:56.815Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "2",
+    "object_repr": "Pokhara",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-04-10T15:35:00.418Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "2",
+    "object_repr": "Pokhara",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-04-10T15:35:04.435Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "3",
+    "object_repr": "Lumbini",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-04-10T15:35:20.981Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "3",
+    "object_repr": "Lumbini",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-04-10T16:00:26.919Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "1",
+    "object_repr": "Kathmandu",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-04-10T16:05:35.424Z",
+    "user": [
+      "test"
+    ],
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "object_id": "1",
+    "object_repr": "Test Venue",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-04-10T16:42:20.251Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "city"
+    ],
+    "object_id": "3",
+    "object_repr": "Lumbini",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-04-10T22:58:52.742Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "venuemodel"
+    ],
+    "object_id": "2",
+    "object_repr": "Test Venue 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-04-10T23:47:10.387Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "object_id": "1",
+    "object_repr": "Test Venue - Image",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-04-10T23:47:15.200Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "object_id": "2",
+    "object_repr": "Test Venue - Image",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-04-10T23:47:20.084Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "object_id": "3",
+    "object_repr": "Test Venue - Image",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-04-10T23:47:24.384Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "venueimages"
+    ],
+    "object_id": "4",
+    "object_repr": "Test Venue - Image",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-04-11T00:01:03.474Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "object_id": "1",
+    "object_repr": "Vegetarian - price - Test Venue",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-04-11T00:01:10.547Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "price"
+    ],
+    "object_id": "2",
+    "object_repr": "Non-Vegetarian - price - Test Venue",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-04-11T01:34:22.620Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "object_id": "1",
+    "object_repr": "BookingModel object (1)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-04-11T01:53:54.584Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "object_id": "5",
+    "object_repr": "BookingModel object (5)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-04-11T01:53:54.584Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "object_id": "4",
+    "object_repr": "BookingModel object (4)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-04-11T01:53:54.584Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "object_id": "3",
+    "object_repr": "BookingModel object (3)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-04-11T01:53:54.584Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "venue",
+      "bookingmodel"
+    ],
+    "object_id": "2",
+    "object_repr": "BookingModel object (2)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Transportation{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-primary mb-6">Transportation for Event Venues in Nepal</h1>
+
+    <p class="text-lg text-gray-700 mb-8">
+        Nepal, with its diverse geography, poses both opportunities and challenges when it comes to event transportation.
+        Whether you're planning a wedding in the hills of Nagarkot or a corporate retreat in Pokhara, understanding the
+        logistics of transportation is crucial to ensuring a smooth event experience.
+    </p>
+
+    <!-- Section 1 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">1. Transportation Needs by Venue Location</h2>
+        <p class="text-gray-700 mb-4">
+            Event venues across Nepal vary from easily accessible urban banquet halls to remote resorts in the mountains.
+            Transportation planning must account for guest mobility, weather conditions, and road access.
+        </p>
+        <img src="{% static 'images/venue_road.jpg' %}" alt="Road to venue" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+        <ul class="list-disc ml-6 text-gray-700">
+            <li><strong>Kathmandu Valley:</strong> Most venues here are accessible by car or van.</li>
+            <li><strong>Hilly Regions:</strong> Resorts may need 4WD vehicles or shuttles for guests.</li>
+            <li><strong>Terai Belt:</strong> Easier transport with highway access, ideal for large buses.</li>
+        </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">2. Vendor Transport & Equipment Delivery</h2>
+        <p class="text-gray-700 mb-4">
+            Catering, decoration, and technical equipment vendors often require early access and dedicated logistics to
+            transport their materials. Communication with the venue regarding parking/loading areas is key.
+        </p>
+        <img src="{% static 'images/vendor_transport.jpg' %}" alt="Vendor transport truck" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+    </div>
+
+    <!-- Section 3 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">3. Guest Shuttle Services</h2>
+        <p class="text-gray-700 mb-4">
+            For destinations like Nagarkot, Dhulikhel, or Pokhara, it's recommended to provide shuttle buses or carpool
+            options to guests. This ensures timely arrival and improves the overall experience.
+        </p>
+        <img src="{% static 'images/shuttle_bus.jpg' %}" alt="Shuttle Bus Service" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+    </div>
+
+    <!-- Section 4 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">4. Eco-Friendly Transportation</h2>
+        <p class="text-gray-700 mb-4">
+            For events that prioritize sustainability, consider electric vehicle rentals, carpooling, or even local
+            bicycle rentals for nearby accommodations. Some venues in Kathmandu now partner with EV providers for such services.
+        </p>
+        <img src="{% static 'images/eco_transport.jpg' %}" alt="Eco friendly vehicle" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-primary text-white p-6 rounded-xl text-center">
+        <h3 class="text-2xl font-bold mb-2">Need Help Planning Transportation?</h3>
+        <p class="mb-4">Our event specialists can help coordinate buses, vans, and vendor transport with trusted providers across Nepal.</p>
+        <a href="" class="inline-block bg-white text-primary font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition">
+            Contact Us
+        </a>
+    </div>
+</div>
+{% endblock %}

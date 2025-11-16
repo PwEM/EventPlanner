@@ -1,0 +1,57 @@
+{% extends "users/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <div class="h-screen bg-gradient-custom flex justify-center items-center">
+        <div class="bg-white p-8 my-8 rounded-lg shadow-lg w-full max-w-md space-y-6" style="height: fit-content;">
+            <div class="text-center my-2">
+                <a href="{% url 'home:index' %}">
+                    <h1 class="text-4xl font-extrabold text-gradient">
+                        Event Planner
+                    </h1>
+                </a>
+            </div>
+            <h2 class="text-2xl font-semibold text-center mb-6">Register</h2>
+
+            <form id="registerForm" action="{% url 'account_signup' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    {% include 'account/includes/field_error.html' with errors=form.non_field_errors %}
+                {% endif %}
+
+                {% for field in form %}
+                    {% if field.errors %}
+                        {% include 'account/includes/field_error.html' with errors=field.errors %}
+                    {% endif %}
+
+                    {% if field.name == "is_vendor" %}
+                        <label class="flex align-middle gap-3 w-full p-3 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary" for="{{ field.id_for_label }}">{{ field.label }}{{ field }}</label>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+
+                <button
+                        type="submit"
+                        id="registerButton"
+                        class="w-full p-3 bg-secondary text-white border border-transparent rounded-lg hover:bg-transparent hover:border-secondary hover:text-secondary cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary"
+                >
+                    Register
+                </button>
+            </form>
+
+            <div id="errorMessage" class="text-red-500 text-sm mt-4 block hidden">
+                Error message would appear here
+            </div>
+
+            <div class="mt-4 text-center">
+                <span class="text-gray-600">Already have an account? </span>
+                <a href="{% url 'account_login' %}" class="text-secondary hover:underline">
+                    Login
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

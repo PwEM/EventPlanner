@@ -1,0 +1,20 @@
+.bg-gradient-custom {
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.button-primary {
+    background-color: var(--color-secondary);
+}
+
+.button-primary:hover {
+    background-color: transparent;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}

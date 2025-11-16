@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bookings{% endblock %}
+
+{% block content %}
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6">My Bookings</h1>
+
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Venue
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Booked At
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Booked For
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            People
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Meal
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Amount
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Booking Status
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                    {% for booking in bookings %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="font-medium text-gray-900">{{ booking.venue.name }}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ booking.booked_at|date:"M d, Y" }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ booking.booked_for|date:"M d, Y" }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ booking.total_people }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ booking.get_meal_type_display }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                Rs. {{ booking.get_total_payment_amount }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ booking.status }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                {% if not booking.is_paid and not booking.status == "Cancelled" %}
+                                    <button onclick="showPaymentModal('{{ booking.id }}', '{{ booking.get_total_payment_amount }}')"
+                                            class="text-blue-600 hover:text-blue-900 mr-4 cursor-pointer">Pay Now
+                                    </button>
+                                {% endif %}
+                                {% if not booking.status == "Cancelled" and not booking.status == "Completed" %}
+                                    <button onclick="cancelBooking('{{ booking.id }}')"
+                                            class="text-red-600 hover:text-red-900 mr-4 cursor-pointer">Cancel
+                                    </button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="7" class="px-6 py-4 text-center text-gray-500">No bookings found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal (same as before but enhanced) -->
+    <div id="paymentModal"
+         class="fixed inset-0 flex items-center justify-center bg-black/30 hidden overflow-hidden z-50">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Complete Payment</h2>
+            <p class="text-gray-600 mb-4">Amount: Rs. <span id="paymentAmount">0</span></p>
+
+            <div class="space-y-3 mb-6">
+                <button class="payment-option w-full p-3 border rounded-lg hover:bg-gray-50 flex items-center">
+                    <img src="{% static 'images/khalti.png' %}" class="h-6 mr-3" alt="Khalti">
+                    <span>Pay with Khalti</span>
+                </button>
+            </div>
+
+            <input type="hidden" id="bookingId" value=""/>
+
+            <div class="flex justify-between">
+                <button onclick="closePaymentModal()"
+                        class="px-4 py-2 border rounded-lg text-gray-700 hover:bg-gray-50">
+                    Cancel
+                </button>
+                <button onclick="processPayment()"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                    Confirm Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentModal(bookingId, amount) {
+            document.getElementById('paymentAmount').textContent = amount;
+            document.getElementById('bookingId').value = bookingId;
+            document.getElementById('paymentModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        async function processPayment() {
+            const bookingId = document.getElementById('bookingId').value;
+            const paymentBtn = document.querySelector('#paymentModal button[onclick="processPayment()"]');
+
+            paymentBtn.disabled = true;
+            paymentBtn.textContent = 'Processing...';
+
+
+            try {
+                const response = await fetch(`/venue/pay-booking/${bookingId}/`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Payment successful!');
+                    window.location.reload();
+                } else {
+                    throw new Error(data.message || 'Payment failed');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                paymentBtn.disabled = false;
+                paymentBtn.textContent = 'Confirm Payment';
+                closePaymentModal();
+            }
+        }
+    </script>
+{% endblock %}

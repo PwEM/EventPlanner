@@ -1,0 +1,11 @@
+<div class="w-full bg-secondary text-white py-5 px-6">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="flex gap-8 font-semibold text-lg">
+            <a href="{% url 'home:index' %}" class="{% if request.path == "/" %}border-b-2 border-white{% endif %} pb-1">Venue</a>
+            <a href="{% url 'home:transportation' %}" class="{% if request.path == "/transporation/" %}border-b-2 border-white{% endif %} cursor-pointer">Transportation</a>
+            <a href="{% url 'home:car-decoration' %}" class="{% if request.path == "/car-decoration/" %}border-b-2 border-white{% endif %} cursor-pointer">Car Decoration</a>
+            <a href="{% url 'home:photographer' %}" class="{% if request.path == "/photographer/" %}border-b-2 border-white{% endif %} cursor-pointer">Photographer</a>
+            <a href="{% url 'home:bus-rent' %}" class="{% if request.path == "/bus-rent/" %}border-b-2 border-white{% endif %} cursor-pointer">Bus Rent</a>
+        </div>
+    </div>
+</div>

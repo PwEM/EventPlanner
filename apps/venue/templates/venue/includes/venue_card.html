@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="pListItem bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:-translate-y-1">
+    <img src="
+    {% if obj.thumbnail_image %}
+        {{ obj.thumbnail_image.url }}
+    {% else %}
+        {% static 'images/venue.jpg' %}
+    {% endif %}"
+    alt="{{ obj.name }}" class="w-full h-48 object-cover"/>
+
+    <div class="pListTitles p-4 space-y-3">
+        <h1 class="text-xl font-semibold text-gray-800">{{ obj.name }}</h1>
+        <p class="text-sm text-gray-600">{{ obj.description|truncatewords:60 }}</p>
+
+        <a href="{% url 'venue:venue-detail' obj.slug %}"
+           class="inline-block text-sm text-white bg-secondary px-4 py-2 rounded-lg shadow hover:bg-secondary-dark transition duration-300">
+            Read More
+        </a>
+    </div>
+</div>

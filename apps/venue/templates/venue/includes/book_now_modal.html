@@ -1,0 +1,60 @@
+<div id="bookingModal" class="fixed inset-0 flex items-center justify-center bg-black/30 hidden overflow-hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Book Your Venue</h2>
+
+        <form id="bookingForm" method="post" action="{% url 'venue:booking' venue.id %}">
+            {% csrf_token %}
+            <input type="hidden" name="venue" value="{{ venue.id }}" />
+            <input type="hidden" name="user" value="{{ user.id }}" />
+
+            <div class="mb-4">
+                <label for="total_people" class="block text-gray-700">Total People</label>
+                <div class="error-message text-red-500 text-sm mb-2" id="total_people_error"></div>
+                <input type="number" id="total_people" name="total_people" class="w-full p-2 border rounded-lg" required min="1">
+            </div>
+
+            <div class="mb-4">
+                <label for="id_booked_for" class="block text-gray-700">Booking Date</label>
+                <div class="error-message text-red-500 text-sm mb-2" id="booked_for_error"></div>
+                <input type="date" id="id_booked_for" name="booked_for" class="w-full p-2 border rounded-lg" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="meal_type" class="block text-gray-700">Meal Type</label>
+                <div class="error-message text-red-500 text-sm mb-2" id="meal_type_error"></div>
+                <select id="meal_type" name="meal_type" class="w-full p-2 border rounded-lg" required>
+                    {% if venue.get_veg_price %}
+                        <option value="Vegetarian">Vegetarian</option>
+                    {% endif %}
+                    {% if venue.get_non_veg_price %}
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    {% endif %}
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <p id="priceDisplay" class="text-sm text-gray-700">
+                    <strong>Price Per Person: Rs. </strong><span id="pricePerPerson">0.00</span>
+                </p>
+            </div>
+
+            <div class="mb-4">
+                <p id="totalAmountDisplay" class="text-xl font-semibold text-gray-800">
+                    <strong>Total: Rs. </strong><span id="totalAmount">0.00</span>
+                </p>
+            </div>
+
+            <div class="flex justify-end">
+                <button type="submit" id="bookingSubmit" class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    Confirm Booking
+                </button>
+            </div>
+        </form>
+
+        <button id="closeModalBtn" class="absolute top-4 right-4 text-black cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+</div>

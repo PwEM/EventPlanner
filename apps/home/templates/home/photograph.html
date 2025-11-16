@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Event Photography in Nepal{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-primary mb-6">Capturing Moments: Event Photography in Nepal</h1>
+
+    <p class="text-lg text-gray-700 mb-8">
+        Photography plays a crucial role in preserving memories from all types of events in Nepal. From elaborate weddings
+        to simple birthdays, skilled photographers help freeze time through candid, creative, and culturally resonant images.
+    </p>
+
+    <!-- Section 1 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">1. Wedding Photography</h2>
+        <p class="text-gray-700 mb-4">
+            Nepali weddings are grand and colorful—perfect for storytelling through a lens. Photographers document every detail,
+            from traditional rituals to emotional family moments. Pre-wedding and post-wedding shoots are also increasingly popular.
+        </p>
+        <img src="{% static 'images/photo-1.jpg' %}" alt="Wedding photography" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+        <ul class="list-disc ml-6 text-gray-700">
+            <li>Focus on rituals: Mehendi, Swayambar, Mangal Dhun, etc.</li>
+            <li>Use of drone shots, cinematic editing, and candid captures.</li>
+            <li>Highlighting cultural outfits and décor details.</li>
+        </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">2. Birthday & Family Events</h2>
+        <p class="text-gray-700 mb-4">
+            Birthdays, anniversaries, and family gatherings often have vibrant and personal photography. Capturing kids,
+            cake-cutting, games, and laughter makes these moments eternal.
+        </p>
+    </div>
+    <img src="{% static 'images/photo-birthday.jpg' %}" alt="Birthday event photography" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+
+    <!-- Section 3 -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-semibold text-secondary mb-3">3. Corporate & Formal Events</h2>
+        <p class="text-gray-700 mb-4">
+            From product launches to conferences and award ceremonies, corporate photography focuses on professionalism and branding.
+            Photographers cover speeches, audience reactions, and highlights of the event.
+        </p>
+        <img src="{% static 'images/photo-3.jpg' %}" alt="Corporate event photography" class="rounded-lg shadow-md w-full h-72 object-cover mb-4">
+        <ul class="list-disc ml-6 text-gray-700">
+            <li>Event banners, stage presence, networking moments.</li>
+            <li>Branded backdrops and media interactions.</li>
+            <li>Highlight reels and press-ready photos.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

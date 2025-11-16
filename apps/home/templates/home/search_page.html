@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+    <div class="max-w-7xl mx-auto p-6">
+        <form method="get" action="{% url 'home:search' %}" class="mb-6">
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="text" name="q" placeholder="Search venues..."
+                       value="{{ request.GET.q }}"
+                       class="flex-1 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-400">
+                <button type="submit"
+                        class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary-700 transition">
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Filters Sidebar -->
+            <aside class="md:col-span-1 space-y-4">
+                <form action="{% url 'home:search' %}" method="get">
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-1">City</label>
+                        <select name="city" class="w-full p-2 border rounded-lg">
+                            <option value="">All Cities</option>
+                            {% for c in cities %}
+                                <option value="{{ c.id }}"
+                                        {% if request.GET.city == c.id|stringformat:"s" %}selected{% endif %}>{{ c.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-1">Minimum Capacity</label>
+                        <input type="number" name="min_capacity" class="w-full p-2 border rounded-lg"
+                               placeholder="e.g. 100" value="{{ request.GET.min_capacity }}">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-1">Min Price (per person)</label>
+                        <input type="number" name="min_price" class="w-full p-2 border rounded-lg"
+                               placeholder="Rs." value="{{ request.GET.min_price }}">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-1">Max Price (per person)</label>
+                        <input type="number" name="max_price" class="w-full p-2 border rounded-lg"
+                               placeholder="Rs." value="{{ request.GET.max_price }}">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-700 mb-1">Date</label>
+                        <input type="date" name="date" class="w-full p-2 border rounded-lg"
+                               value="{{ request.GET.date }}">
+                    </div>
+
+                    <button type="submit"
+                            class="w-full mt-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-700 transition">
+                        Apply Filters
+                    </button>
+                </form>
+            </aside>
+
+
+            <!-- Results -->
+            <div class="md:col-span-3">
+                {% if venues %}
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Search Results</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {% for venue in venues %}
+                            <div class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+                                <a href="{% url 'venue:venue-detail' venue.slug %}" class="block">
+                                    {% if venue.thumbnail_image %}
+                                        <img src="{{ venue.thumbnail_image.url }}" alt="{{ venue.name }}"
+                                             class="w-full h-48 object-cover rounded-md mb-3">
+                                    {% else %}
+                                        <img src="{% static 'images/venue.jpg' %}" alt="{{ venue.name }}"
+                                             class="w-full h-48 object-cover rounded-md mb-3">
+                                    {% endif %}
+                                    <h3 class="text-lg font-bold text-gray-900">{{ venue.name }}</h3>
+                                    <p class="text-sm text-gray-600">{{ venue.city.name }}</p>
+                                    <p>Capacity: {{ venue.capacity }}</p>
+                                    <p>Veg Price: Rs. {{ venue.get_veg_price }}</p>
+                                    <p>Non Veg Price: Rs. {{ venue.get_non_veg_price }}</p>
+
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-gray-600 mt-6">No venues found matching your filters.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

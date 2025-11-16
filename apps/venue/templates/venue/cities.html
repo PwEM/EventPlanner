@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}All Cities{% endblock %}
+
+{% block content %}
+    <!-- templates/cities_list.html -->
+
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Page Heading -->
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Explore Cities</h1>
+
+        {% if cities %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {% for city in cities %}
+                    <a href="{% url 'venue:city-detail' city.slug %}"
+                       class="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden group">
+                        {% if city.image %}
+                            <img src="{{ city.image.url }}"
+                                 alt="{{ city.name }}"
+                                 class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                        {% else %}
+                            <img src="{% static 'images/city.jpg' %}"
+                                 alt="{{ city.name }}"
+                                 class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                        {% endif %}
+                        <div class="p-4">
+                            <h2 class="text-lg font-semibold text-gray-800">{{ city.name }}</h2>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">{{ city.description|truncatewords:15 }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-gray-600">No cities available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

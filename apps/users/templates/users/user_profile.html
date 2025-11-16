@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="min-h-screen flex items-center justify-center text-gray-800">
+        <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg text-center space-y-6">
+            <h1 class="text-3xl font-extrabold text-primary mb-6">Update Your Profile</h1>
+
+            <!-- User Profile Image -->
+            <div class="flex justify-center">
+                {% if user.profile_image %}
+                    <img src="{{ user.profile_image.url }}" alt="{{ user.get_full_name }}"
+                         class="h-20 w-20 rounded-full object-cover">
+                {% else %}
+                    <div class="h-20 w-20 bg-gray-300 rounded-full flex items-center justify-center text-xl text-white">
+                        {{ user.get_full_name|slice:":1" }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Profile Form -->
+            <form method="post" enctype="multipart/form-data" class="space-y-4">
+                {% csrf_token %}
+
+                <div class="space-y-2">
+                    {{ form.first_name }}
+                </div>
+
+                <div class="space-y-2">
+                    {{ form.last_name }}
+                </div>
+
+                <div class="space-y-2">
+                    {{ form.username }}
+                </div>
+
+                <div class="space-y-2">
+                    {{ form.email }}
+                </div>
+
+                <div class="space-y-2">
+                    {{ form.phone }}
+                </div>
+                
+                {% if not request.user.is_superuser %}
+                	<div class="space-y-2">
+                        {{ form.password1 }}
+                    </div>
+
+                    <div class="space-y-2">
+                        {{ form.password2 }}
+                    </div>
+                {% endif %} 
+
+                <div class="space-y-2">
+                    {{ form.profile_image }}
+                </div>
+
+                <button type="submit"
+                        class="w-full mt-4 py-2 px-4 cursor-pointer bg-secondary text-white font-semibold rounded-lg shadow hover:bg-transparent hover:border-secondary hover:text-secondary transition duration-300">
+                    Update Profile
+                </button>
+            </form>
+
+            <!-- Back to Home -->
+            <div class="mt-4 text-center">
+                <a href="{% url 'home:index' %}" class="text-sm text-indigo-600 hover:underline">
+                    ⬅️ Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

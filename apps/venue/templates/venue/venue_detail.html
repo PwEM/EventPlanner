@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ venue.name }}{% endblock %}
+
+{% block content %}
+    <div class="max-w-7xl mx-auto p-6">
+        {% include 'includes/breadcrumb.html' with url="/venue/city/"|add:venue.city.slug list=venue.city.name obj=venue %}
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-3 space-y-10">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ venue.name }}</h1>
+                        <p class="text-gray-700 mb-4">{{ venue.description }}</p>
+                    </div>
+
+                    <div>
+                        {% if venue.thumbnail_image %}
+                            <img src="{{ venue.thumbnail_image.url }}" alt="{{ venue.name }}"
+                                 class="w-full h-60 object-cover rounded-lg shadow">
+                        {% else %}
+                            <img src="{% static 'images/venue.jpg' %}" alt="{{ venue.name }}"
+                                 class="w-full h-60 object-cover rounded-lg shadow">
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    <div class="space-y-3">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-2">Venue Details</h2>
+
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            {% if venue.capacity %}
+                                <li><strong>Capacity:</strong> {{ venue.capacity }} people</li>
+                            {% endif %}
+                            {% if venue.prices %}
+                                <li>
+                                    <strong>Price:</strong>
+                                    <ul class="ml-4 space-y-1">
+                                        {% for price in venue.prices.all %}
+                                            <li>{{ price.type }}: Rs. {{ price.price }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endif %}
+                            {% if venue.owner %}
+                                <li><strong>Owner:</strong> {{ venue.owner }}</li>
+                            {% endif %}
+                            {% if venue.owner.phone %}
+                                <li><strong>Phone:</strong> {{ venue.owner.phone }}</li>
+                            {% endif %}
+
+                            {% if venue.owner.email %}
+                                <li><strong>Email:</strong><a href="mailto:{{ venue.owner.email }}"
+                                                              class="text-blue-600">{{ venue.owner.email }}</a></li>
+                            {% endif %}
+                            {% if venue.location_text %}
+                                <li><strong>Venue Address:</strong> {{ venue.location_text }}</li>
+                            {% endif %}
+                            {% if venue.get_rating %}
+                                <li><strong>Venue Rating:</strong> {{ venue.get_rating }}/5</li>
+                            {% endif %}
+                        </ul>
+
+
+                        {% if venue.has_price %}
+                            <div class="mt-4">
+                                <a data-veg-price="{{ venue.get_veg_price }}" data-non-veg-price="{{ venue.get_non_veg_price }}"
+                                   id="bookNowBtn"
+                                   class="inline-block px-5 py-3 bg-primary text-white font-semibold cursor-pointer rounded-lg shadow hover:bg-primary-700 transition">
+                                    Book Now
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Embedded Map -->
+                    {% if venue.location_embed %}
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-800 mb-2">Location Map</h2>
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                {{ venue.location_embed|safe }}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Sidebar: Related Venues -->
+            {% if related_venues %}
+                <aside>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">More Venues in {{ venue.city.name }}</h3>
+                    <ul class="space-y-3">
+                        {% for other_venue in related_venues %}
+                            <li>
+                                <a href="{% url 'venue:venue-detail' other_venue.slug %}"
+                                   class="flex items-center gap-3 p-3 bg-primary rounded-lg hover:bg-primary-700 transition">
+                                    {% if other_venue.image %}
+                                        <img src="{{ other_venue.image.url }}"
+                                             alt="{{ other_venue.name }}"
+                                             class="w-10 h-10 object-cover rounded-full shadow-sm">
+                                    {% else %}
+                                        <img src="{% static 'images/venue.jpg' %}"
+                                             alt="{{ other_venue.name }}"
+                                             class="w-10 h-10 object-cover rounded-full shadow-sm">
+                                    {% endif %}
+                                    <h4 class="font-medium text-white">{{ other_venue.name }}</h4>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            {% endif %}
+        </div>
+
+        {% if venue.images.exists %}
+            <div class="my-5">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Gallery</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {% for image in venue.images.all %}
+                        <div>
+                            <img src="{{ image.image.url }}"
+                                 alt="Gallery image for {{ venue.name }}"
+                                 class="w-full h-52 object-cover rounded-lg shadow">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    {% include "venue/includes/book_now_modal.html" %}
+
+    {% include "venue/includes/payment_modal.html" %}
+{% endblock %}

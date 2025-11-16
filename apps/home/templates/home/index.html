@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% include 'home/includes/search.html' %}
+
+    <div class="max-w-screen-xl mx-auto px-4">
+        {% if cities %}
+            <div class="my-8 relative">
+                <h2 class="text-2xl font-semibold my-8">Venue Collection By City</h2>
+
+                <div class="featured mx-auto">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for city in cities %}
+                                <div class="swiper-slide">
+                                    {% include 'venue/includes/city_card.html' with obj=city %}
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="swiper-pagination" style="bottom: 0 !important;"></div>
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+
+        {% if venues %}
+            <div class="py-6">
+                <h2 class="text-2xl font-semibold my-8">Available Venues</h2>
+
+                <!-- Property List Items (Static) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {% for venue in venues %}
+                        {% include 'venue/includes/venue_card.html' with obj=venue %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

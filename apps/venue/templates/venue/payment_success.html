@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Success{% endblock %}
+
+{% block extra_css %}
+	 <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="flex items-center justify-center min-h-screen bg-gray-50">
+        <div class="bg-white p-10 rounded-3xl shadow-lg max-w-md w-full text-center animate-fade-in">
+            <div class="flex justify-center mb-6">
+                <div class="bg-green-100 text-green-600 rounded-full p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-800 mb-2">Payment Successful!</h1>
+            <p class="text-gray-500 mb-6">Thank you for your purchase. Your transaction has been completed
+                successfully.</p>
+
+            <div class="space-y-2 text-sm text-gray-600 mb-6">
+                <p><strong>Order ID:</strong> #{{ request.GET.purchase_order_id|default:"123456" }}</p>
+                <p><strong>Amount:</strong> Rs. {{ requset.GET.total_amount|default:"99.00" }}</p>
+            </div>
+
+            <a href="{% url 'home:index' %}"
+               class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full transition">
+                Go to Home
+            </a>
+        </div>
+    </div>
+{% endblock %}
