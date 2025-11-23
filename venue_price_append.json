@@ -1,0 +1,91 @@
+[
+  {"model": "venue.price", "pk": 1, "fields": {"venue": 1, "price": "300.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 2, "fields": {"venue": 1, "price": "450.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 3, "fields": {"venue": 2, "price": "320.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 4, "fields": {"venue": 2, "price": "480.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 5, "fields": {"venue": 3, "price": "280.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 6, "fields": {"venue": 3, "price": "430.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 7, "fields": {"venue": 4, "price": "350.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 8, "fields": {"venue": 4, "price": "500.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 9, "fields": {"venue": 5, "price": "260.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 10, "fields": {"venue": 5, "price": "410.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 11, "fields": {"venue": 6, "price": "300.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 12, "fields": {"venue": 6, "price": "470.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 13, "fields": {"venue": 7, "price": "295.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 14, "fields": {"venue": 7, "price": "455.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 15, "fields": {"venue": 8, "price": "310.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 16, "fields": {"venue": 8, "price": "490.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 17, "fields": {"venue": 9, "price": "270.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 18, "fields": {"venue": 9, "price": "420.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 19, "fields": {"venue": 10, "price": "330.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 20, "fields": {"venue": 10, "price": "510.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 21, "fields": {"venue": 11, "price": "300.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 22, "fields": {"venue": 11, "price": "460.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 23, "fields": {"venue": 12, "price": "305.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 24, "fields": {"venue": 12, "price": "470.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 25, "fields": {"venue": 13, "price": "290.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 26, "fields": {"venue": 13, "price": "445.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 27, "fields": {"venue": 14, "price": "310.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 28, "fields": {"venue": 14, "price": "490.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 29, "fields": {"venue": 15, "price": "275.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 30, "fields": {"venue": 15, "price": "430.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 31, "fields": {"venue": 16, "price": "295.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 32, "fields": {"venue": 16, "price": "455.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 33, "fields": {"venue": 17, "price": "320.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 34, "fields": {"venue": 17, "price": "500.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 35, "fields": {"venue": 18, "price": "305.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 36, "fields": {"venue": 18, "price": "470.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 37, "fields": {"venue": 19, "price": "275.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 38, "fields": {"venue": 19, "price": "430.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 39, "fields": {"venue": 20, "price": "300.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 40, "fields": {"venue": 20, "price": "480.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 41, "fields": {"venue": 21, "price": "290.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 42, "fields": {"venue": 21, "price": "450.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 43, "fields": {"venue": 22, "price": "315.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 44, "fields": {"venue": 22, "price": "495.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 45, "fields": {"venue": 23, "price": "290.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 46, "fields": {"venue": 23, "price": "450.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 47, "fields": {"venue": 24, "price": "305.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 48, "fields": {"venue": 24, "price": "475.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 49, "fields": {"venue": 25, "price": "300.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 50, "fields": {"venue": 25, "price": "480.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 51, "fields": {"venue": 26, "price": "270.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 52, "fields": {"venue": 26, "price": "440.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 53, "fields": {"venue": 27, "price": "285.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 54, "fields": {"venue": 27, "price": "455.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 55, "fields": {"venue": 28, "price": "310.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 56, "fields": {"venue": 28, "price": "500.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 57, "fields": {"venue": 29, "price": "295.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 58, "fields": {"venue": 29, "price": "460.00", "type": "Non-Vegetarian"}},
+
+  {"model": "venue.price", "pk": 59, "fields": {"venue": 30, "price": "320.00", "type": "Vegetarian"}},
+  {"model": "venue.price", "pk": 60, "fields": {"venue": 30, "price": "520.00", "type": "Non-Vegetarian"}}
+]
