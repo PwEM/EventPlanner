@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.venue.models import VenueModel, City, VenueImages, Price, BookingModel
+from apps.venue.models import VenueModel, City, VenueImages, Price, BookingModel, KhaltiTransaction
 
 # Register your models here.
 class UniqueVendorAdmin(admin.ModelAdmin):
@@ -41,3 +41,4 @@ admin.site.register(City)
 admin.site.register(VenueImages, UniqueVendorAdmin)
 admin.site.register(Price, UniqueVendorAdmin)
 admin.site.register(BookingModel, UniqueVendorAdmin)
+admin.site.register(KhaltiTransaction)
