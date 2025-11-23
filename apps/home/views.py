@@ -67,7 +67,7 @@ class SearchView(TemplateView):
             print("Price filter error:", e)
 
         if date:
-            qs = qs.exclude(venue_bookings__booked_for=date, venue_bookings__status=BookingStatus.PENDING)
+            qs = qs.exclude(venue_bookings__booked_for=date, venue_bookings__status=BookingStatus.ONGOING)
 
         context.update({
             "venues": qs.distinct(),
