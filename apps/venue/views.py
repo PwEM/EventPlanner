@@ -7,12 +7,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView, TemplateView
+from apps.venue.services.recommendation import recommend_venues
 
 from apps.venue.constants import VenueBookingStatus, BookingStatus
 from apps.venue.forms import BookingForm
 from apps.venue.models import City, VenueModel, BookingModel, KhaltiTransaction
 import json
+import logging
 
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 class CityDetail(DetailView):
@@ -41,17 +44,28 @@ class VenueDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         slug = self.kwargs.get('slug')
         venue = get_object_or_404(VenueModel.objects.prefetch_related("images", "prices"), slug=slug)
-        related_venues = VenueModel.objects.filter(city=venue.city).exclude(slug=slug)
+
+        try:
+            # Get all three recommendation types
+            recommendations = recommend_venues(venue.id, n_recommendations=5)
+        except Exception as e:
+            logger.error(f"KNN recommendation error: {e}")
+            # Fallback: just same city venues
+            recommendations = {
+                "similar": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
+                "same_location": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
+                "price_match": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
+            }
+
         context.update({
             'venue': venue,
-            'related_venues': related_venues,
+            'similar_venues': recommendations.get("similar"),
+            'same_location_venues': recommendations.get("same_location"),
+            'price_match_venues': recommendations.get("price_match"),
         })
-
         return context
-
 
 class CityView(TemplateView):
     template_name = 'venue/cities.html'
@@ -131,7 +145,7 @@ class PayBookingView(LoginRequiredMixin, View):
             url = "https://dev.khalti.com/api/v2/epayment/initiate/"
 
             payload = json.dumps({
-                "return_url": f"http://localhost:8000{reverse("venue:payment-success")}",
+                "return_url": f"http://localhost:8000{reverse('venue:payment-success')}",
                 "website_url": "http://localhost:8000/",
                 "amount": "1000",
                 "purchase_order_id": f"{booking.id}",

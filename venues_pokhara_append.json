@@ -1,0 +1,321 @@
+[
+  {
+    "model": "venue.venuemodel",
+    "pk": 13,
+    "fields": {
+      "name": "Lakeside Crystal Banquet",
+      "slug": "lakeside-crystal-banquet",
+      "description": "Modern banquet hall with a serene ambience near Phewa Lake.",
+      "capacity": 400,
+      "thumbnail_image": "venue/lakeside_crystal.jpg",
+      "owner": 3,
+      "city": 3,
+      "location_text": "Lakeside, Pokhara",
+      "location_embed": "Near Lakeside Market",
+      "created_at": "2025-01-13T10:00:00Z",
+      "updated_at": "2025-01-13T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 14,
+    "fields": {
+      "name": "Pokhara Mountain View Hall",
+      "slug": "pokhara-mountain-view-hall",
+      "description": "Beautiful hilltop venue offering panoramic views of the Himalayas.",
+      "capacity": 500,
+      "thumbnail_image": "venue/mountain_view.jpg",
+      "owner": 2,
+      "city": 3,
+      "location_text": "Sarangkot Road, Pokhara",
+      "location_embed": "Near Sarangkot View Point",
+      "created_at": "2025-01-14T11:20:00Z",
+      "updated_at": "2025-01-14T11:20:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 15,
+    "fields": {
+      "name": "Begnas Eco Events",
+      "slug": "begnas-eco-events",
+      "description": "Eco-friendly event venue near Begnas Lake with natural surroundings.",
+      "capacity": 350,
+      "thumbnail_image": "venue/begnas_eco.jpg",
+      "owner": 5,
+      "city": 3,
+      "location_text": "Begnas, Pokhara",
+      "location_embed": "Near Begnas Lake Entrance",
+      "created_at": "2025-01-15T09:40:00Z",
+      "updated_at": "2025-01-15T09:40:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 16,
+    "fields": {
+      "name": "New Road Premium Events",
+      "slug": "newroad-premium-events",
+      "description": "Spacious hall for corporate events and receptions at Pokhara’s busiest commercial hub.",
+      "capacity": 450,
+      "thumbnail_image": "venue/pokhara_newroad.jpg",
+      "owner": 1,
+      "city": 3,
+      "location_text": "New Road, Pokhara",
+      "location_embed": "Near Puspalal Park",
+      "created_at": "2025-01-16T14:10:00Z",
+      "updated_at": "2025-01-16T14:10:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 17,
+    "fields": {
+      "name": "Prithvi Chowk Celebration Hall",
+      "slug": "prithvi-chowk-celebration-hall",
+      "description": "Modern celebration venue best suited for receptions and private events.",
+      "capacity": 300,
+      "thumbnail_image": "venue/prithvi_chowk.jpg",
+      "owner": 7,
+      "city": 3,
+      "location_text": "Prithvi Chowk, Pokhara",
+      "location_embed": "Opp. Prithvi Buspark",
+      "created_at": "2025-01-17T08:50:00Z",
+      "updated_at": "2025-01-17T08:50:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 18,
+    "fields": {
+      "name": "Pokhara Signature Banquet",
+      "slug": "pokhara-signature-banquet",
+      "description": "Luxurious banquet hall with premium interiors for weddings and elite events.",
+      "capacity": 600,
+      "thumbnail_image": "venue/pokhara_signature.jpg",
+      "owner": 8,
+      "city": 3,
+      "location_text": "Mahendrapool, Pokhara",
+      "location_embed": "Near Mahendrapool Bridge",
+      "created_at": "2025-01-18T12:00:00Z",
+      "updated_at": "2025-01-18T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 19,
+    "fields": {
+      "name": "Chipledhunga Grand Hall",
+      "slug": "chipledhunga-grand-hall",
+      "description": "Centralized venue ideal for gatherings, meetings, and receptions.",
+      "capacity": 350,
+      "thumbnail_image": "venue/chipledhunga.jpg",
+      "owner": 4,
+      "city": 3,
+      "location_text": "Chipledhunga, Pokhara",
+      "location_embed": "Near Siddhartha Chowk",
+      "created_at": "2025-01-19T16:30:00Z",
+      "updated_at": "2025-01-19T16:30:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 20,
+    "fields": {
+      "name": "Davis Falls Event Park",
+      "slug": "davis-falls-event-park",
+      "description": "Outdoor event park located near one of Pokhara’s top attractions.",
+      "capacity": 550,
+      "thumbnail_image": "venue/davis_falls.jpg",
+      "owner": 6,
+      "city": 3,
+      "location_text": "Davis Falls, Pokhara",
+      "location_embed": "Opp. Davis Falls Entrance",
+      "created_at": "2025-01-20T10:15:00Z",
+      "updated_at": "2025-01-20T10:15:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 21,
+    "fields": {
+      "name": "Kahun View Events",
+      "slug": "kahun-view-events",
+      "description": "A beautiful hilltop venue offering scenic views of Pokhara city.",
+      "capacity": 250,
+      "thumbnail_image": "venue/kahun_view.jpg",
+      "owner": 3,
+      "city": 3,
+      "location_text": "Kahun, Pokhara",
+      "location_embed": "Near Kahun Tower",
+      "created_at": "2025-01-21T09:10:00Z",
+      "updated_at": "2025-01-21T09:10:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 22,
+    "fields": {
+      "name": "Pokhara Heritage Hall",
+      "slug": "pokhara-heritage-hall",
+      "description": "A traditionally designed event venue for cultural and family events.",
+      "capacity": 280,
+      "thumbnail_image": "venue/pkr_heritage.jpg",
+      "owner": 8,
+      "city": 3,
+      "location_text": "Bindabasini, Pokhara",
+      "location_embed": "Near Bindabasini Temple",
+      "created_at": "2025-01-22T08:40:00Z",
+      "updated_at": "2025-01-22T08:40:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 23,
+    "fields": {
+      "name": "Batulechaur Celebration Hall",
+      "slug": "batulechaur-celebration-hall",
+      "description": "Indoor venue suitable for birthdays, engagements, and gatherings.",
+      "capacity": 260,
+      "thumbnail_image": "venue/batulechaur.jpg",
+      "owner": 5,
+      "city": 3,
+      "location_text": "Batulechaur, Pokhara",
+      "location_embed": "Near Mahendra Cave",
+      "created_at": "2025-01-23T13:20:00Z",
+      "updated_at": "2025-01-23T13:20:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 24,
+    "fields": {
+      "name": "Pokhara Riverside Events",
+      "slug": "pokhara-riverside-events",
+      "description": "Beautiful riverside venue perfect for outdoor receptions.",
+      "capacity": 480,
+      "thumbnail_image": "venue/pkr_riverside.jpg",
+      "owner": 7,
+      "city": 3,
+      "location_text": "Seti River, Pokhara",
+      "location_embed": "Near Seti Viewpoint",
+      "created_at": "2025-01-24T11:30:00Z",
+      "updated_at": "2025-01-24T11:30:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 25,
+    "fields": {
+      "name": "Rambazar Premium Hall",
+      "slug": "rambazar-premium-hall",
+      "description": "A modern event space perfect for receptions and meetings.",
+      "capacity": 300,
+      "thumbnail_image": "venue/rambazar.jpg",
+      "owner": 6,
+      "city": 3,
+      "location_text": "Rambazar, Pokhara",
+      "location_embed": "Near Rambazar Chowk",
+      "created_at": "2025-01-25T15:00:00Z",
+      "updated_at": "2025-01-25T15:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 26,
+    "fields": {
+      "name": "Srijana Chowk Banquet",
+      "slug": "srijana-chowk-banquet",
+      "description": "Affordable banquet hall with modern facilities.",
+      "capacity": 350,
+      "thumbnail_image": "venue/srijana_chowk.jpg",
+      "owner": 4,
+      "city": 3,
+      "location_text": "Srijana Chowk, Pokhara",
+      "location_embed": "Near Srijana Park",
+      "created_at": "2025-01-26T12:10:00Z",
+      "updated_at": "2025-01-26T12:10:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 27,
+    "fields": {
+      "name": "Amarsingh Chowk Events Hall",
+      "slug": "amarsingh-events-hall",
+      "description": "Large hall perfect for large gatherings and ceremonies.",
+      "capacity": 520,
+      "thumbnail_image": "venue/amarsingh.jpg",
+      "owner": 8,
+      "city": 3,
+      "location_text": "Amarsingh Chowk, Pokhara",
+      "location_embed": "Near Amarsingh Garden",
+      "created_at": "2025-01-27T09:20:00Z",
+      "updated_at": "2025-01-27T09:20:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 28,
+    "fields": {
+      "name": "Pokhara Urban Events",
+      "slug": "pokhara-urban-events",
+      "description": "Urban-style event venue for birthdays and receptions.",
+      "capacity": 260,
+      "thumbnail_image": "venue/pkr_urban.jpg",
+      "owner": 3,
+      "city": 3,
+      "location_text": "Sundhara, Pokhara",
+      "location_embed": "Opp. Sundhara Park",
+      "created_at": "2025-01-28T08:55:00Z",
+      "updated_at": "2025-01-28T08:55:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 29,
+    "fields": {
+      "name": "Matepani Grand Hall",
+      "slug": "matepani-grand-hall",
+      "description": "Spacious venue located in a peaceful residential area.",
+      "capacity": 300,
+      "thumbnail_image": "venue/matepani.jpg",
+      "owner": 2,
+      "city": 3,
+      "location_text": "Matepani, Pokhara",
+      "location_embed": "Near Matepani Gumba",
+      "created_at": "2025-01-29T10:45:00Z",
+      "updated_at": "2025-01-29T10:45:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 30,
+    "fields": {
+      "name": "Pokhara Garden Events",
+      "slug": "pokhara-garden-events",
+      "description": "Garden-style event space perfect for outdoor receptions and celebrations.",
+      "capacity": 480,
+      "thumbnail_image": "venue/pkr_garden.jpg",
+      "owner": 1,
+      "city": 3,
+      "location_text": "Ratna Chowk, Pokhara",
+      "location_embed": "Near Ratna Park",
+      "created_at": "2025-01-30T14:30:00Z",
+      "updated_at": "2025-01-30T14:30:00Z"
+    }
+  }
+]

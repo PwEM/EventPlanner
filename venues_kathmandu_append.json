@@ -1,0 +1,215 @@
+[
+  {
+    "model": "venue.venuemodel",
+    "pk": 1,
+    "fields": {
+      "name": "Baneshwor Supreme Banquet",
+      "slug": "baneshwor-supreme-banquet",
+      "description": "Premium banquet hall in mid-Baneshwor ideal for weddings and corporate events.",
+      "capacity": 450,
+      "thumbnail_image": "venue/baneshwor_supreme.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Mid Baneshwor, Kathmandu",
+      "location_embed": "Near Everest Bank",
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 2,
+    "fields": {
+      "name": "Bouddha Heritage Hall",
+      "slug": "bouddha-heritage-hall",
+      "description": "Traditional-style event hall with a peaceful ambience near Bouddhanath.",
+      "capacity": 300,
+      "thumbnail_image": "venue/bouddha_heritage.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Bouddha, Kathmandu",
+      "location_embed": "Near Bouddhanath Stupa",
+      "created_at": "2025-01-02T11:30:00Z",
+      "updated_at": "2025-01-02T11:30:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 3,
+    "fields": {
+      "name": "Thamel Event Center",
+      "slug": "thamel-event-center",
+      "description": "Modern event venue ideal for tourism events and cultural programs.",
+      "capacity": 350,
+      "thumbnail_image": "venue/thamel_center.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Thamel, Kathmandu",
+      "location_embed": "Near Garden of Dreams",
+      "created_at": "2025-01-03T12:15:00Z",
+      "updated_at": "2025-01-03T12:15:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 4,
+    "fields": {
+      "name": "Baluwatar Luxury Hall",
+      "slug": "baluwatar-luxury-hall",
+      "description": "Luxury banquet hall perfect for elite gatherings and receptions.",
+      "capacity": 500,
+      "thumbnail_image": "venue/baluwatar_luxury.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Baluwatar, Kathmandu",
+      "location_embed": "Near Presidential Residence",
+      "created_at": "2025-01-04T09:00:00Z",
+      "updated_at": "2025-01-04T09:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 5,
+    "fields": {
+      "name": "Mahalaxmi Grand Banquet",
+      "slug": "mahalaxmi-grand-banquet",
+      "description": "Spacious hall suited for large-scale events and wedding ceremonies.",
+      "capacity": 650,
+      "thumbnail_image": "venue/mahalaxmi_grand.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Mahalaxmisthan, Kathmandu",
+      "location_embed": "Near Mahalaxmisthan Temple",
+      "created_at": "2025-01-05T14:20:00Z",
+      "updated_at": "2025-01-05T14:20:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 6,
+    "fields": {
+      "name": "Kalanki Banquet Lounge",
+      "slug": "kalanki-banquet-lounge",
+      "description": "Modern banquet for receptions and family celebrations.",
+      "capacity": 420,
+      "thumbnail_image": "venue/kalanki_lounge.jpg",
+      "owner": 5,
+      "city": 2,
+      "location_text": "Kalanki, Kathmandu",
+      "location_embed": "Near Bhatbhateni Kalanki",
+      "created_at": "2025-01-06T16:00:00Z",
+      "updated_at": "2025-01-06T16:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 7,
+    "fields": {
+      "name": "Maitidevi Celebration Hall",
+      "slug": "maitidevi-celebration-hall",
+      "description": "Indoor celebration venue ideal for birthdays and small gatherings.",
+      "capacity": 200,
+      "thumbnail_image": "venue/maitidevi_hall.jpg",
+      "owner": 2,
+      "city": 2,
+      "location_text": "Maitidevi, Kathmandu",
+      "location_embed": "Opp. Maitidevi Temple",
+      "created_at": "2025-01-07T18:30:00Z",
+      "updated_at": "2025-01-07T18:30:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 8,
+    "fields": {
+      "name": "Gairidhara Premium Events",
+      "slug": "gairidhara-premium-events",
+      "description": "Premium events hall for corporate launches and seminars.",
+      "capacity": 300,
+      "thumbnail_image": "venue/gairidhara_premium.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Gairidhara, Kathmandu",
+      "location_embed": "Near Mega Bank",
+      "created_at": "2025-01-08T09:45:00Z",
+      "updated_at": "2025-01-08T09:45:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 9,
+    "fields": {
+      "name": "Kirtipur Hillside Venue",
+      "slug": "kirtipur-hillside-venue",
+      "description": "Scenic hillside event venue with outdoor seating.",
+      "capacity": 500,
+      "thumbnail_image": "venue/kirtipur_hillside.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Kirtipur, Kathmandu",
+      "location_embed": "Near Tribhuvan University",
+      "created_at": "2025-01-09T10:35:00Z",
+      "updated_at": "2025-01-09T10:35:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 10,
+    "fields": {
+      "name": "Dillibazar Grand Hall",
+      "slug": "dillibazar-grand-hall",
+      "description": "Beautifully decorated hall for receptions and gatherings.",
+      "capacity": 320,
+      "thumbnail_image": "venue/dillibazar_grand.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Dillibazar, Kathmandu",
+      "location_embed": "Near Passport Office",
+      "created_at": "2025-01-10T12:50:00Z",
+      "updated_at": "2025-01-10T12:50:00Z"
+    }
+  },
+
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 11,
+    "fields": {
+      "name": "New Road Royal Events",
+      "slug": "newroad-royal-events",
+      "description": "Classic event hall located in the commercial heart of Kathmandu.",
+      "capacity": 280,
+      "thumbnail_image": "venue/newroad_royal.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "New Road, Kathmandu",
+      "location_embed": "Opp. Ranjana Galli",
+      "created_at": "2025-01-11T08:00:00Z",
+      "updated_at": "2025-01-11T08:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 12,
+    "fields": {
+      "name": "Balaju Celebration Hub",
+      "slug": "balaju-celebration-hub",
+      "description": "A spacious events venue suitable for weddings and receptions.",
+      "capacity": 550,
+      "thumbnail_image": "venue/balaju_hub.jpg",
+      "owner": 6,
+      "city": 2,
+      "location_text": "Balaju, Kathmandu",
+      "location_embed": "Near Banasthali School",
+      "created_at": "2025-01-12T11:00:00Z",
+      "updated_at": "2025-01-12T11:00:00Z"
+    }
+  }
+
+]

@@ -107,14 +107,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv("DB_NAME"),
         'USER': os.getenv("DB_USER"),
         'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+        'HOST': os.getenv("DB_HOST", "127.0.0.1"),
+        'PORT': os.getenv("DB_PORT", "5432"),
     }
 }
+
 
 
 
@@ -161,6 +162,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+KNN_MODEL_DIR = os.path.join(BASE_DIR, "knn_models")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -194,3 +197,5 @@ if DEBUG:
     CRONJOBS = [
         ('0 0 * * *', 'apps.venue.tasks.update_booking_statuses')
     ]
+    
+NPM_BIN_PATH = "npm.cmd"
