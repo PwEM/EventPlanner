@@ -38,36 +38,6 @@ class CityDetail(DetailView):
         return context
 
 
-# class VenueDetail(DetailView):
-#     model = VenueModel
-#     context_object_name = 'venue'
-#     template_name = 'venue/venue_detail.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         slug = self.kwargs.get('slug')
-#         venue = get_object_or_404(VenueModel.objects.prefetch_related("images", "prices"), slug=slug)
-
-#         try:
-#             # Get all three recommendation types
-#             recommendations = recommend_venues(venue.id, n_recommendations=5)
-#         except Exception as e:
-#             logger.error(f"KNN recommendation error: {e}")
-#             # Fallback: just same city venues
-#             recommendations = {
-#                 "similar": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
-#                 "same_location": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
-#                 "price_match": VenueModel.objects.filter(city=venue.city).exclude(slug=slug)[:5],
-#             }
-
-#         context.update({
-#             'venue': venue,
-#             'similar_venues': recommendations.get("similar"),
-#             'same_location_venues': recommendations.get("same_location"),
-#             'price_match_venues': recommendations.get("price_match"),
-#         })
-#         return context
-
 class VenueDetail(DetailView):
     model = VenueModel
     context_object_name = 'venue'
