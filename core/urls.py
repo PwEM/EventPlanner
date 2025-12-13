@@ -18,10 +18,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from apps.venue.urls import store_user_location
 
-admin.site.site_title = "Event Planner"
-admin.site.site_header = "Event Planner Dashboard"
-admin.site.index_title = "Welcome to Event Planner"
+admin.site.site_title = "Venuewise"
+admin.site.site_header = "Venuewise Dashboard"
+admin.site.index_title = "Welcome to Venuewise"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,9 @@ urlpatterns = [
     path('venue/', include('apps.venue.urls')),
     path('account/', include('apps.users.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
+
+    path('api/store-location/', store_user_location, name = "store-location")
+
 ]
 
 if settings.DEBUG:

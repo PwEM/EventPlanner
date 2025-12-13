@@ -1,0 +1,335 @@
+[
+  {
+    "model": "users.authuser",
+    "pk": 1,
+    "fields": {
+      "username": "admin_user",
+      "password": "pbkdf2_sha256$260000$...",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@venue.com",
+      "phone": "+977-9800000000",
+      "profile_image": "users/admin.jpg",
+      "date_joined": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "users.authuser",
+    "pk": 2,
+    "fields": {
+      "username": "vendor_nepal",
+      "password": "pbkdf2_sha256$260000$...",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "first_name": "Sabin",
+      "last_name": "Sharma",
+      "email": "sabin@venue.com",
+      "phone": "+977-9841234567",
+      "profile_image": "users/sabin.jpg",
+      "date_joined": "2024-01-05T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.city",
+    "pk": 1,
+    "fields": {
+      "name": "Kathmandu",
+      "slug": "kathmandu",
+      "description": "Capital City"
+    }
+  },
+  {
+    "model": "venue.city",
+    "pk": 2,
+    "fields": {
+      "name": "Pokhara",
+      "slug": "pokhara",
+      "description": "Lake City"
+    }
+  },
+  {
+    "model": "venue.city",
+    "pk": 3,
+    "fields": {
+      "name": "Dharan",
+      "slug": "dharan",
+      "description": "Eastern Hub"
+    }
+  },
+  {
+    "model": "venue.city",
+    "pk": 4,
+    "fields": {
+      "name": "Chitwan",
+      "slug": "chitwan",
+      "description": "Jungle City"
+    }
+  },
+
+  {
+    "model": "venue.venuemodel",
+    "pk": 1,
+    "fields": {
+      "name": "Soaltee Ballroom",
+      "slug": "soaltee-ballroom",
+      "capacity": 1200,
+      "owner": 2,
+      "city": 1,
+      "location_text": "Tahachal, Kathmandu",
+      "lat": 27.6994,
+      "lng": 85.2974,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 2,
+    "fields": {
+      "name": "Lakeside Pavilion",
+      "slug": "lakeside-pavilion",
+      "capacity": 400,
+      "owner": 2,
+      "city": 2,
+      "location_text": "Lakeside, Pokhara",
+      "lat": 28.2095,
+      "lng": 83.9589,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 3,
+    "fields": {
+      "name": "Dharan Party Palace",
+      "slug": "dharan-party-palace",
+      "capacity": 600,
+      "owner": 2,
+      "city": 3,
+      "location_text": "Bhanu Chowk, Dharan",
+      "lat": 26.8115,
+      "lng": 87.2798,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 4,
+    "fields": {
+      "name": "Sauraha Jungle Hall",
+      "slug": "sauraha-jungle-hall",
+      "capacity": 300,
+      "owner": 2,
+      "city": 4,
+      "location_text": "Sauraha, Chitwan",
+      "lat": 27.5724,
+      "lng": 84.4921,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 5,
+    "fields": {
+      "name": "Hotel Yak & Yeti Grand Hall",
+      "slug": "yak-yeti-grand-hall",
+      "capacity": 900,
+      "owner": 2,
+      "city": 1,
+      "location_text": "Durbar Marg, Kathmandu",
+      "lat": 27.7149,
+      "lng": 85.3187,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 6,
+    "fields": {
+      "name": "Godavari Garden Venue",
+      "slug": "godavari-garden-venue",
+      "capacity": 500,
+      "owner": 2,
+      "city": 1,
+      "location_text": "Godavari, Lalitpur",
+      "lat": 27.5945,
+      "lng": 85.382,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 7,
+    "fields": {
+      "name": "Pokhara Banquet Center",
+      "slug": "pokhara-banquet-center",
+      "capacity": 700,
+      "owner": 2,
+      "city": 2,
+      "location_text": "New Road, Pokhara",
+      "lat": 28.221,
+      "lng": 83.9856,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 8,
+    "fields": {
+      "name": "Begnas Lake Resort Hall",
+      "slug": "begnas-lake-resort-hall",
+      "capacity": 250,
+      "owner": 2,
+      "city": 2,
+      "location_text": "Begnas, Pokhara",
+      "lat": 28.1952,
+      "lng": 84.0956,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 9,
+    "fields": {
+      "name": "Dharan Community Hall",
+      "slug": "dharan-community-hall",
+      "capacity": 350,
+      "owner": 2,
+      "city": 3,
+      "location_text": "Putali Line, Dharan",
+      "lat": 26.8065,
+      "lng": 87.2846,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "venue.venuemodel",
+    "pk": 10,
+    "fields": {
+      "name": "Chitwan Riverside Banquet",
+      "slug": "chitwan-riverside-banquet",
+      "capacity": 450,
+      "owner": 2,
+      "city": 4,
+      "location_text": "Narayani Riverside, Chitwan",
+      "lat": 27.681,
+      "lng": 84.4304,
+      "created_at": "2024-01-10T10:00:00Z",
+    "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "venue.price",
+    "pk": 1,
+    "fields": { "venue": 1, "price": "2200.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 2,
+    "fields": { "venue": 1, "price": "3000.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 3,
+    "fields": { "venue": 2, "price": "1500.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 4,
+    "fields": { "venue": 2, "price": "2000.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 5,
+    "fields": { "venue": 3, "price": "1100.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 6,
+    "fields": { "venue": 3, "price": "1400.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 7,
+    "fields": { "venue": 4, "price": "1300.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 8,
+    "fields": { "venue": 4, "price": "1700.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 9,
+    "fields": { "venue": 5, "price": "2800.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 10,
+    "fields": { "venue": 5, "price": "3500.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 11,
+    "fields": { "venue": 6, "price": "1800.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 12,
+    "fields": { "venue": 6, "price": "2300.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 13,
+    "fields": { "venue": 7, "price": "1700.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 14,
+    "fields": { "venue": 7, "price": "2200.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 15,
+    "fields": { "venue": 8, "price": "1400.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 16,
+    "fields": { "venue": 8, "price": "1900.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 17,
+    "fields": { "venue": 9, "price": "1200.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 18,
+    "fields": { "venue": 9, "price": "1600.00", "type": "NON_VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 19,
+    "fields": { "venue": 10, "price": "1500.00", "type": "VEG" }
+  },
+  {
+    "model": "venue.price",
+    "pk": 20,
+    "fields": { "venue": 10, "price": "2000.00", "type": "NON_VEG" }
+  }
+]

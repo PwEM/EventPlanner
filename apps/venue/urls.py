@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CityDetail, VenueDetail, CityView, BookingView, CancelBookingView, PayBookingView, PaymentSuccessView
+from .views import CityDetail, VenueDetail, CityView, BookingView, CancelBookingView, PayBookingView, PaymentSuccessView, store_user_location
 
 app_name = "venue"
 urlpatterns = [

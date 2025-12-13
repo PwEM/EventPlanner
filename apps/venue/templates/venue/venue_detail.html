@@ -4,6 +4,51 @@
 {% block title %}{{ venue.name }}{% endblock %}
 
 {% block content %}
+    <!-- Mark page as venue detail page for JavaScript -->
+    <div data-venue-detail style="display: none;"></div>
+
+    <!-- Location Permission Prompt -->
+    <div id="location-prompt" style="display: none;">
+        <div class="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg z-50 animate-slide-down">
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">📍</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Get Better Venue Recommendations</h3>
+                            <p class="text-sm opacity-90">Allow location access to find venues near you</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <button onclick="window.VenueLocationHandler.requestLocationPermission()" 
+                                class="px-6 py-2 bg-white text-purple-600 font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                            Allow Location
+                        </button>
+                        <button onclick="document.getElementById('location-prompt').style.display='none'" 
+                                class="px-6 py-2 border border-white text-white rounded-lg hover:bg-white/10 transition">
+                            Not Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="location-loading" style="display: none;">
+        <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-white text-lg">Getting your location...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="location-error" style="display: none;" 
+         class="fixed top-20 right-5 bg-red-50 text-red-600 px-5 py-4 rounded-lg border-2 border-red-200 shadow-lg z-40 max-w-sm animate-slide-in">
+    </div>
+
     <div class="max-w-7xl mx-auto p-6">
         {% include 'includes/breadcrumb.html' with url="/venue/city/"|add:venue.city.slug list=venue.city.name obj=venue %}
 
@@ -87,125 +132,170 @@
                     {% endif %}
                 </div>
             </div>
-
-
-
-
-
         </div>
 
-<div class="max-w-7xl mx-auto p-6 space-y-10">
+        <!-- Recommendations Section -->
+        <div class="max-w-7xl mx-auto p-6 space-y-10 mt-10">
+            <!-- Location Badge -->
+            {% if user_has_location %}
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                    Showing venues near you
+                </div>
+            {% endif %}
 
-    <!-- Similar Venues -->
-    {% if similar_venues %}
-        <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Similar Venues</h2>
-            <ul class="space-y-3">
-                {% for v in similar_venues|slice:":5" %}
-                    <li class="flex items-center gap-3 p-3 bg-white rounded-lg shadow hover:bg-gray-100 transition">
-                        {% if v.thumbnail_image %}
-                            <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% else %}
-                            <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% endif %}
-                        <div>
-                            <h3 class="font-medium text-gray-800">{{ v.name }}</h3>
-                            <p class="text-sm text-gray-600">
-                                Capacity: {{ v.capacity }}
-                                {% if v.prices.exists %} | 
-                                {% for price in v.prices.all %}
-                                    {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
-                                {% endfor %}
+            <!-- Similar Venues -->
+            {% if similar_venues %}
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Similar Venues</h2>
+                        <span class="text-sm text-gray-500">Based on your preferences</span>
+                    </div>
+                    <div class="space-y-4">
+                        {% for v in similar_venues %}
+                            <div class="flex items-start gap-4 p-4 rounded-lg border border-gray-100 hover:border-purple-200 hover:shadow-md transition-all duration-300 group">
+                                {% if v.thumbnail_image %}
+                                    <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
+                                {% else %}
+                                    <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
                                 {% endif %}
-                            </p>
-                            <a href="{% url 'venue:venue-detail' v.slug %}"
-                               class="text-primary text-sm font-semibold hover:underline">View Details</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ v.name }}</h3>
+                                    <p class="text-sm text-gray-600 mb-2">
+                                        <span class="inline-flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                            </svg>
+                                            Capacity: {{ v.capacity }}
+                                        </span>
+                                        {% if v.prices.exists %}
+                                            <span class="mx-2">|</span>
+                                            {% for price in v.prices.all %}
+                                                {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </p>
+                                    <a href="{% url 'venue:venue-detail' v.slug %}"
+                                       class="inline-flex items-center gap-1 text-purple-600 text-sm font-semibold hover:text-purple-700 hover:gap-2 transition-all">
+                                        View Details
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
 
-    <!-- Same Location Venues -->
-    {% if same_location_venues %}
-        <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Venues in the Same Location</h2>
-            <ul class="space-y-3">
-                {% for v in same_location_venues|slice:":5" %}
-                    <li class="flex items-center gap-3 p-3 bg-white rounded-lg shadow hover:bg-gray-100 transition">
-                        {% if v.thumbnail_image %}
-                            <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% else %}
-                            <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% endif %}
-                        <div>
-                            <h3 class="font-medium text-gray-800">{{ v.name }}</h3>
-                            <p class="text-sm text-gray-600">
-                                Capacity: {{ v.capacity }}
-                                {% if v.prices.exists %} | 
-                                {% for price in v.prices.all %}
-                                    {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
-                                {% endfor %}
+            <!-- Same Location Venues -->
+            {% if same_location_venues %}
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Nearby Venues</h2>
+                        <span class="text-sm text-gray-500">Closest to you</span>
+                    </div>
+                    <div class="space-y-4">
+                        {% for v in same_location_venues %}
+                            <div class="flex items-start gap-4 p-4 rounded-lg border border-gray-100 hover:border-indigo-200 hover:shadow-md transition-all duration-300 group">
+                                {% if v.thumbnail_image %}
+                                    <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
+                                {% else %}
+                                    <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
                                 {% endif %}
-                            </p>
-                            <a href="{% url 'venue:venue-detail' v.slug %}"
-                               class="text-primary text-sm font-semibold hover:underline">View Details</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ v.name }}</h3>
+                                    <p class="text-sm text-gray-600 mb-2">
+                                        <span class="inline-flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                            </svg>
+                                            Capacity: {{ v.capacity }}
+                                        </span>
+                                        {% if v.prices.exists %}
+                                            <span class="mx-2">|</span>
+                                            {% for price in v.prices.all %}
+                                                {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </p>
+                                    <a href="{% url 'venue:venue-detail' v.slug %}"
+                                       class="inline-flex items-center gap-1 text-indigo-600 text-sm font-semibold hover:text-indigo-700 hover:gap-2 transition-all">
+                                        View Details
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Price Match Venues -->
+            {% if price_match_venues %}
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Similar Price Range</h2>
+                        <span class="text-sm text-gray-500">Matches your budget</span>
+                    </div>
+                    <div class="space-y-4">
+                        {% for v in price_match_venues %}
+                            <div class="flex items-start gap-4 p-4 rounded-lg border border-gray-100 hover:border-green-200 hover:shadow-md transition-all duration-300 group">
+                                {% if v.thumbnail_image %}
+                                    <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
+                                {% else %}
+                                    <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
+                                         class="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform">
+                                {% endif %}
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ v.name }}</h3>
+                                    {% if v.prices.exists %}
+                                        <p class="text-sm text-gray-600 mb-2">
+                                            <span class="inline-flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                {% for price in v.prices.all %}
+                                                    {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
+                                                {% endfor %}
+                                            </span>
+                                        </p>
+                                    {% endif %}
+                                    <a href="{% url 'venue:venue-detail' v.slug %}"
+                                       class="inline-flex items-center gap-1 text-green-600 text-sm font-semibold hover:text-green-700 hover:gap-2 transition-all">
+                                        View Details
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
-    {% endif %}
 
-    <!-- Price Match Venues -->
-    {% if price_match_venues %}
-        <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Venues with Similar Prices</h2>
-            <ul class="space-y-3">
-                {% for v in price_match_venues|slice:":5" %}
-                    <li class="flex items-center gap-3 p-3 bg-white rounded-lg shadow hover:bg-gray-100 transition">
-                        {% if v.thumbnail_image %}
-                            <img src="{{ v.thumbnail_image.url }}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% else %}
-                            <img src="{% static 'images/venue.jpg' %}" alt="{{ v.name }}"
-                                 class="w-12 h-12 object-cover rounded-lg">
-                        {% endif %}
-                        <div>
-                            <h3 class="font-medium text-gray-800">{{ v.name }}</h3>
-                            {% if v.prices.exists %}
-                                <p class="text-sm text-gray-600">
-                                    {% for price in v.prices.all %}
-                                        {{ price.type }}: Rs. {{ price.price }}{% if not forloop.last %}, {% endif %}
-                                    {% endfor %}
-                                </p>
-                            {% endif %}
-                            <a href="{% url 'venue:venue-detail' v.slug %}"
-                               class="text-primary text-sm font-semibold hover:underline">View Details</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-
-</div>
-
-
+        <!-- Gallery Section -->
         {% if venue.images.exists %}
-            <div class="flex flex-col">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">Gallery</h2>
+            <div class="max-w-7xl mx-auto p-6 mt-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Gallery</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {% for image in venue.images.all %}
-                        <div>
+                        <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
                             <img src="{{ image.image.url }}"
                                  alt="Gallery image for {{ venue.name }}"
-                                 class="w-2/4 h-52 object-cover rounded-lg shadow">
+                                 class="w-full h-52 object-cover hover:scale-110 transition-transform duration-300">
                         </div>
                     {% endfor %}
                 </div>
@@ -213,10 +303,42 @@
         {% endif %}
     </div>
 
-
-
-
     {% include "venue/includes/book_now_modal.html" %}
-
     {% include "venue/includes/payment_modal.html" %}
+
+    <!-- Add custom styles for animations -->
+    <style>
+        @keyframes slide-down {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slide-in {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-slide-down {
+            animation: slide-down 0.3s ease-out;
+        }
+        
+        .animate-slide-in {
+            animation: slide-in 0.3s ease-out;
+        }
+    </style>
+
+    <!-- Include the location handler JavaScript -->
+    <script src="{% static 'js/venue-location-handler.js' %}"></script>
 {% endblock %}

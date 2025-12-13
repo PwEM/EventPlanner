@@ -1,8 +1,8 @@
-<div class="flex justify-center bg-primary p-4 bg-primary">
+<!-- <div class="flex justify-center bg-primary p-4 bg-primary">
     <div class="flex justify-between items-center max-w-screen-xl w-full">
 
         <a href="{% url 'home:index' %}" class="text-white text-2xl font-bold">
-            <span class="logo">Event Planner</span>
+            <span class="logo">VenueWise</span>
         </a>
 
         <div class="relative flex items-center p-4 border border-white rounded-2xl hover:bg-secondary hover:bg-secondary transition-colors">
@@ -17,10 +17,10 @@
                     {% endif %}
                     <span>{{ request.user.get_full_name }}</span>
                     <i class="fas fa-caret-down"></i>
-                </button>
+                </button> -->
 
                 <!-- Dropdown Menu -->
-                <div id="profile-dropdown-menu" class="absolute w-full top-[89%] py-3 rounded-b-lg right-0 w-48 bg-white text-black hidden shadow-lg group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
+                <!-- <div id="profile-dropdown-menu" class="absolute w-full top-[89%] py-3 rounded-b-lg right-0 w-48 bg-white text-black hidden shadow-lg group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
                     <ul class="">
                         <li>
                             <a href="{% url 'users:profile' %}" class="block px-4 py-2 hover:bg-secondary hover:text-white">Profile</a>
@@ -36,6 +36,89 @@
                         </li>
                         <li>
                             <a href="{% url 'account_logout' %}" class="block px-4 py-2 hover:bg-secondary hover:text-white">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <a href="{% url 'account_login' %}" class="flex gap-2 items-center text-white rounded-md">
+                    <i class="fas fa-user"></i>
+                    Login/Register
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div> -->
+<div class="flex justify-center p-4" style="background-color:#0a1a44;">
+    <div class="flex justify-between items-center max-w-screen-xl w-full">
+
+        <a href="{% url 'home:index' %}" class="text-white text-2xl font-bold">
+            <span class="logo">VenueWise</span>
+        </a>
+
+        <div class="relative flex items-center p-4 border border-white rounded-2xl transition-colors"
+             style="border-color:white; background-color:#0a1a44;"
+             onmouseover="this.style.backgroundColor='#1e3a8a'"
+             onmouseout="this.style.backgroundColor='#0a1a44'">
+
+            {% if request.user.is_authenticated %}
+                <button class="flex items-center gap-2 text-white cursor-pointer" id="profile-dropdown-btn">
+                    {% if request.user.profile_image %}
+                        <div class="bg-white w-[30px] h-[30px] rounded-full overflow-hidden">
+                            <img src="{{ request.user.profile_image.url }}"
+                                 alt="{{ request.user.get_full_name }}"
+                                 class="rounded-full object-cover w-[30px] h-[30px]" />
+                        </div>
+                    {% else %}
+                        <i class="fas fa-user"></i>
+                    {% endif %}
+                    <span>{{ request.user.get_full_name }}</span>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="profile-dropdown-menu"
+                     class="absolute top-[89%] py-3 rounded-b-lg right-0 w-48 bg-white text-black hidden shadow-lg transition-opacity duration-200">
+
+                    <ul>
+                        <li>
+                            <a href="{% url 'users:profile' %}" class="block px-4 py-2 hover:text-white"
+                               style="transition:0.2s"
+                               onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'"
+                               onmouseout="this.style.backgroundColor='white'; this.style.color='black'">
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:bookings' %}" class="block px-4 py-2 hover:text-white"
+                               style="transition:0.2s"
+                               onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'"
+                               onmouseout="this.style.backgroundColor='white'; this.style.color='black'">
+                                Bookings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:recent_venues' %}" class="block px-4 py-2 hover:text-white"
+                               style="transition:0.2s"
+                               onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'"
+                               onmouseout="this.style.backgroundColor='white'; this.style.color='black'">
+                                Recent Venues
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:recent_transactions' %}" class="block px-4 py-2 hover:text-white"
+                               style="transition:0.2s"
+                               onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'"
+                               onmouseout="this.style.backgroundColor='white'; this.style.color='black'">
+                                Recent Transactions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account_logout' %}" class="block px-4 py-2 hover:text-white"
+                               style="transition:0.2s"
+                               onmouseover="this.style.backgroundColor='#1e3a8a'; this.style.color='white'"
+                               onmouseout="this.style.backgroundColor='white'; this.style.color='black'">
+                                Logout
+                            </a>
                         </li>
                     </ul>
                 </div>
